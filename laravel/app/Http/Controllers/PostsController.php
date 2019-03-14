@@ -33,7 +33,6 @@ class PostsController extends Controller
 
     public function store(StorePostRequest $request)
     {
-
         Post::create($request->all());
         return redirect()->route('posts.index');
 
