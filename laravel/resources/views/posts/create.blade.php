@@ -22,7 +22,6 @@
                 @endforeach
             </select>
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
     </form>
