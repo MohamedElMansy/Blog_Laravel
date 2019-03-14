@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class PostsController extends Controller
     public function index()
     {
         return view('posts.index',[
-            'posts' => Post::paginate(1)
+            'posts' => Post::paginate(3)
         ]);
     }
 
@@ -30,9 +31,9 @@ class PostsController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
-        $request= request();
+
         Post::create($request->all());
         return redirect()->route('posts.index');
 
@@ -45,9 +46,8 @@ class PostsController extends Controller
             'post'=>$post
         ]);
     }
-    public function update($post)
+    public function update(StorePostRequest $request,$post)
     {
-        $request= request();
         $post = Post::findorfail($post);
         $post->title=$request->title;
         $post->description=$request->description;

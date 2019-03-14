@@ -19,7 +19,7 @@
       @foreach($posts as $post)
         <tr>
 
-          <th scope="row">{{$post->id}}</th>
+          <th scope="row"></th>
           <td>{{$post->title}}</td>
           <td>{{ isset($post->user) ? $post->user->name : 'Not Found'}}</td>
           <td>{{date('d-m-Y', strtotime($post->created_at))}}</td>
