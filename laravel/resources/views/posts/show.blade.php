@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div
+        <div>
             <label>Title</label>
             <label>{{$post->title}}</label>
         </div>
