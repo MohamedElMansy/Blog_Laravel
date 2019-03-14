@@ -13,6 +13,12 @@
             <label >Description</label>
             <textarea name="description" class="form-control"></textarea>
         </div>
+        {{--<div>--}}
+            {{--Logo :--}}
+            {{--<br />--}}
+            {{--<input type="file" name="img" />--}}
+        {{--</div>--}}
+        {{--<br />--}}
 
         <div class="form-group">
             <label >Post Creator</label>

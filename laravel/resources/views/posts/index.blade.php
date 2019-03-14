@@ -42,4 +42,5 @@
     </div>
 
     {{ $posts->links() }}
+
 @endsection

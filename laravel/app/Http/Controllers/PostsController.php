@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -33,7 +34,6 @@ class PostsController extends Controller
 
     public function store(StorePostRequest $request)
     {
-
         Post::create($request->all());
         return redirect()->route('posts.index');
 
@@ -41,16 +41,19 @@ class PostsController extends Controller
 
     public function edit($post)
     {
+
+
         $post=Post::Findorfail($post);
         return view('posts.edit',[
             'post'=>$post
         ]);
     }
-    public function update(StorePostRequest $request,$post)
+    public function update(UpdatePostRequest $request,$post)
     {
         $post = Post::findorfail($post);
         $post->title=$request->title;
         $post->description=$request->description;
+        $post->slug=$request->slug;
         $post->save();
 
         return redirect()->route("posts.index");
